@@ -15,7 +15,27 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>vuejs</title>
   </head>
-  <body class="debug">
+  <body>
+    <div id="root" class="container">
+      <div class="slider-wrapper">
+        <div class="prev">
+          <i @click="prev" class="fas fa-angle-left"></i>
+        </div>
+        <div class="images">
+          <img :src="images[contenPhoto]" alt="" />
+        </div>
+        <div @click="next" class="next">
+          <i class="fas fa-angle-right"></i>
+        </div>
+        <div class="img-nav">
+          <div
+            :class="index == contenPhoto ? 'circle active' : null"
+            v-for="(image, index) in images"
+            class="circle"
+          ></div>
+        </div>
+      </div>
+    </div>
     <script src="js/main.js"></script>
   </body>
 </html>
